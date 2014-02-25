@@ -1,0 +1,153 @@
+<html>
+<head>
+	<title>Dark Souls Challenge Run Generator</title>
+	
+	<link rel="stylesheet" href="foundation.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript">
+		var resultCount = 0;
+		
+		$(function(){
+			var modElem;
+
+			for(var i = 0; i < modifiers.length; i++) {
+				modElem = '<li><label><input type="checkbox" name="' + modifiers[i].name + '">' + modifiers[i].name + '</label></li>';
+				if(modifiers[i].name.indexOf('Weapon Type:') >= 0) {
+					$('#mods3').append(modElem);
+				} else if(modifiers[i].name.indexOf('Class:') >= 0 || modifiers[i].name.indexOf('Max Level:') >= 0 || modifiers[i].name.indexOf('Cosplay:') >= 0) {
+					$('#mods2').append(modElem);
+				} else {
+					$('#mods1').append(modElem);
+				}
+			}
+
+			for(var key in difficulties) {
+				$('#modDifficulty').append('<option value="' + key + '">' + difficulties[key] + '</option>');
+			}
+
+			$('#toggleMods').click(function(){
+				$('#modifiers').slideToggle();
+			});
+		});
+		
+		function randomize() {
+			var chosenMods = [];
+			var chosenTypes = [];
+			var randNums = [];
+			var randNum, mod, chosenDifficulty, difficultyTotal, difficultyOkay, typesOkay;
+			var iterLimit = 10000;
+			difficultyTotal = 0;
+			chosenDifficulty = parseInt($('#modDifficulty').val());
+			resultCount++;
+			
+			$('#output').prepend('<div id="cr' + resultCount + '" class="cr-result"><b>Challenge Run #' + resultCount + ':</b><ul></ul></div>');
+
+			for(var x = 0; x < iterLimit; x++) {
+				typesOkay = true;
+				difficultyOkay = true;
+				randNum = Math.floor((Math.random() * modifiers.length));
+				if($.inArray(randNum, randNums) < 0) {
+					for(var tIter = 0; tIter < modifiers[randNum].types.length; tIter++) { // mod currently being tested
+						if($.inArray(modifiers[randNum].types[tIter], chosenTypes) >= 0) { // check each type against the types already selected
+							typesOkay = false;
+							break;
+						}
+					}
+
+					if((difficultyTotal + parseInt(modifiers[randNum].difficulty)) > chosenDifficulty)
+						difficultyOkay = false;
+
+					if(typesOkay && difficultyOkay) {
+						randNums.push(randNum);
+						chosenMods.push(modifiers[randNum]);
+						difficultyTotal += modifiers[randNum].difficulty;
+						for(var tIter = 0; tIter < modifiers[randNum].types.length; tIter++)
+							chosenTypes.push(modifiers[randNum].types[tIter]);
+					}
+				}
+
+				if(difficultyTotal == chosenDifficulty) {
+					// at this point everything has been satisfied, the run has been created and we're ready to display the results
+					console.debug("difficultyTotal: " + difficultyTotal);
+					console.debug("chosenDifficulty: " + chosenDifficulty);
+					break;
+				}
+
+				if(x == iterLimit-1) {
+					//console.log("Randomization iteration limit exceeded.");
+				}
+			}
+
+			for(var i = 0; i < chosenMods.length; i++) {
+				mod = chosenMods[i];
+
+				$('#cr' + resultCount + ' ul').append('<li class="' + getDifficultyClass(mod.difficulty) + '" title="' + mod.description + '">' + mod.name + '</li>');
+			}
+			$('#cr' + resultCount).hide().slideDown();
+		}
+
+		function getDifficultyClass(diffVal) {
+			switch(diffVal) {
+				case 2:
+					return "easy";
+					break;
+				case 4:
+					return "medium";
+					break;
+				case 8:
+					return "hard";
+					break;
+				case 16:
+					return "insane";
+					break;
+				default:
+					return "";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="row">
+		<div id="content" class="large-12 columns">
+			<h1>Dark Souls Challenge Run Generator</h1>
+
+			<div id="toggleMods" class="small button">Show/Hide Modifiers</div>
+			<div id="modifiers" class="row" style="display:none">
+				<div class="large-4 columns">
+					<ul id="mods1"></ul>
+				</div>
+				<div class="large-4 columns">
+					<ul id="mods2"></ul>
+				</div>
+				<div class="large-4 columns">
+					<ul id="mods3"></ul>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="large-6 large-offset-3 columns">
+					<div class="row collapse">
+						<div class="small-6 large-6 columns">
+							<span class="prefix">Challenge Difficulty</span>
+						</div>
+						<div class="small-6 large-6 columns">
+							<select id="modDifficulty"></select>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="large-6 large-offset-3 columns">
+					<input type="button" value="Randomize" id="randomBtn" class="small button success expand" onclick="randomize()" />
+				</div>
+			</div>
+
+			<div id="output"></div>
+		</div>
+	</div>
+</body>
+</html>
