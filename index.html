@@ -123,45 +123,51 @@
 	</script>
 </head>
 <body>
-	<div class="row">
-		<div id="content" class="large-12 columns">
-			<h1>Dark Souls Challenge Run Generator</h1>
+	<div class="page">
+		<div class="row">
+			<div id="content" class="large-12 columns">
+				<h1>Dark Souls Challenge Run Generator</h1>
 
-			<div id="toggleMods" class="small button">Show/Hide Modifiers</div>
-			<div id="modifiers" class="row" style="display:none">
-				<div class="large-4 columns">
-					<ul id="mods1"></ul>
+				<div id="toggleMods" class="small button">Show/Hide Modifiers</div>
+				<div id="modifiers" class="row" style="display:none">
+					<div class="large-4 columns">
+						<ul id="mods1"></ul>
+					</div>
+					<div class="large-4 columns">
+						<ul id="mods2"></ul>
+					</div>
+					<div class="large-4 columns">
+						<ul id="mods3"></ul>
+					</div>
 				</div>
-				<div class="large-4 columns">
-					<ul id="mods2"></ul>
-				</div>
-				<div class="large-4 columns">
-					<ul id="mods3"></ul>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="large-6 large-offset-3 columns">
-					<div class="row collapse">
-						<div class="small-6 large-6 columns">
-							<span class="prefix">Challenge Difficulty</span>
-						</div>
-						<div class="small-6 large-6 columns">
-							<select id="modDifficulty"></select>
+				
+				<div class="row">
+					<div class="large-6 large-offset-3 columns">
+						<div class="row collapse">
+							<div class="small-6 large-6 columns">
+								<span class="prefix">Challenge Difficulty</span>
+							</div>
+							<div class="small-6 large-6 columns">
+								<select id="modDifficulty"></select>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			
-			<div class="row">
-				<div class="large-6 large-offset-3 columns">
-					<input type="button" value="Randomize" id="randomBtn" class="small button success expand" onclick="randomize()" />
+				
+				<div class="row">
+					<div class="large-6 large-offset-3 columns">
+						<input type="button" value="Randomize" id="randomBtn" class="small button success expand" onclick="randomize()" />
+					</div>
 				</div>
-			</div>
 
-			<div id="output"></div>
+				<div id="output"></div>
+			</div>
 		</div>
-	</div>
+	<div>
+
+	<footer>
+		<a href="https://github.com/ianlamb/darksouls-challenges/releases" target="_blank">Release Notes</a>
+	</footer>
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

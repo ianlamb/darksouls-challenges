@@ -29,6 +29,22 @@ input[type="checkbox"] { margin: 5px 5px 5px 0; }
 	margin-bottom: 200px;
 }
 
+.page {
+	position: relative;
+	z-index: 2;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 35px;
+	padding: 10px;
+	z-index: 1;
+	background: #121212;
+}
+
 .cr-result {
 	background: #454545;
 	border: 1px solid #666;
