@@ -11,7 +11,7 @@ var modifiers = [
 	{
 		'name':'No Shields',
 		'difficulty':8,
-		'description':'',
+		'description':'Who blocks anyway? Rolls for days!',
 		'types':['lhw']
 	},
 	{
@@ -23,13 +23,13 @@ var modifiers = [
 	{
 		'name':'No Critical Hits',
 		'difficulty':8,
-		'description':'',
+		'description':'You may not backstap, parry-reposte or drop-attack an enemy. Fight them like a man!',
 		'types':['behaviour']
 	},
 	{
 		'name':'Naked',
 		'difficulty':8,
-		'description':'',
+		'description':'Drop your gear soldier, you\'re going in your underwear!',
 		'types':['armour']
 	},
 	{
@@ -41,43 +41,43 @@ var modifiers = [
 	{
 		'name':'No Elemental Weapons',
 		'difficulty':2,
-		'description':'',
+		'description':'Your upgrade path must remain physical.',
 		'types':['upgrade']
 	},
 	{
 		'name':'Lightning Weapons',
 		'difficulty':2,
-		'description':'',
+		'description':'Your upgrade path after +5 must be lightning.',
 		'types':['upgrade']
 	},
 	{
 		'name':'Fire Weapons',
 		'difficulty':2,
-		'description':'',
+		'description':'Your upgrade path after +5 must be fire.',
 		'types':['upgrade']
 	},
 	{
 		'name':'Chaos Weapons',
 		'difficulty':2,
-		'description':'',
+		'description':'Your upgrade path after +5 must be chaos.',
 		'types':['upgrade']
 	},
 	{
 		'name':'Divine Weapons',
 		'difficulty':2,
-		'description':'',
+		'description':'Your upgrade path after +5 must be divine.',
 		'types':['upgrade']
 	},
 	{
 		'name':'Magic Weapons',
 		'difficulty':2,
-		'description':'',
+		'description':'Your upgrade path after +5 must be magic.',
 		'types':['upgrade']
 	},
 	{
 		'name':'Enchanted Weapons',
 		'difficulty':2,
-		'description':'',
+		'description':'Your upgrade path after +5 must be enchanted.',
 		'types':['upgrade']
 	},
 	{
@@ -113,13 +113,13 @@ var modifiers = [
 	{
 		'name':'No Consumables',
 		'difficulty':2,
-		'description':'',
+		'description':'You may not use any consumable items except for Estus Flask.',
 		'types':['item']
 	},
 	{
 		'name':'Use What You See',
 		'difficulty':8,
-		'description':'',
+		'description':'Any time you see an item within reach you must pick it up and use/equip it.',
 		'types':['armour','lhw','rhw']
 	},
 	{
