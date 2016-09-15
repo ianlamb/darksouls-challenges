@@ -1,10 +1,10 @@
 var difficulties = 
 	{
-		8:'Casual',
-		16:'Experienced',
-		24:'Veteran',
-		32:'Master',
-		40:'Masochist'
+		4:'Casual',
+		12:'Experienced',
+		20:'Veteran',
+		28:'Master',
+		36:'Masochist'
 	}
 
 var modifiers = [
