@@ -25,7 +25,11 @@
 			}
 
 			for(var key in difficulties) {
-				$('#modDifficulty').append('<option value="' + key + '">' + difficulties[key] + '</option>');
+				var $option = $('<option value="' + key + '">' + difficulties[key] + '</option>');
+				if (difficulties[key] === 'Experienced') {
+					$option.attr('selected', 'selected');
+				}
+				$('#modDifficulty').append($option);
 			}
 
 			$('#toggleMods').click(function(){
