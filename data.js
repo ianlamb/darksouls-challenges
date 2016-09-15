@@ -34,21 +34,21 @@ var modifiers = [
 		'name':'Naked',
 		'difficulty':8,
 		'description':'Drop your gear soldier, you\'re going in your underwear!',
-		'types':['armour']
+		'types':['armour', 'naked']
 	},
 	{
 		'id':'starting-equipment',
 		'name':'Starting Equipment Only',
 		'difficulty':4,
 		'description':'',
-		'types':['armour','lhw','rhw']
+		'types':['cosplay','armour','lhw','rhw']
 	},
 	{
 		'id':'no-elemental',
 		'name':'No Elemental Weapons',
 		'difficulty':2,
 		'description':'Your upgrade path must remain physical.',
-		'types':['upgrade']
+		'types':['upgrade','no-elemental']
 	},
 	{
 		'id':'weapon-up-lightning',
@@ -118,7 +118,7 @@ var modifiers = [
 		'name':'No Armor Upgrades',
 		'difficulty':2,
 		'description':'',
-		'types':['upgrade']
+		'types':['upgrade', 'naked']
 	},
 	{
 		'id':'no-healing',
@@ -139,7 +139,7 @@ var modifiers = [
 		'name':'Use What You See',
 		'difficulty':8,
 		'description':'Any time you see an item within reach you must pick it up and use/equip it.',
-		'types':['armour','lhw','rhw']
+		'types':['cosplay','armour','lhw','rhw']
 	},
 	{
 		'id':'no-dodge',
@@ -258,21 +258,21 @@ var modifiers = [
 		'name':'Cosplay: Solaire',
 		'difficulty':4,
 		'description':'As soon as you can, kill Solaire and adorn his equipment.',
-		'types':['armour','lhw','rhw']
+		'types':['cosplay','solaire','armour','lhw','rhw']
 	},
 	{
 		'id':'ninja',
 		'name':'Cosplay: Ninja',
 		'difficulty':4,
 		'description':'Start as the Thief class and only wear the thief armour set. As soon as you can, kill the Undead Male shop keeper and use his Uchigatana in both hands.',
-		'types':['armour','lhw','rhw']
+		'types':['cosplay','nina','armour','lhw','rhw','class']
 	},
 	{
 		'id':'spartan',
 		'name':'Cosplay: Spartan',
 		'difficulty':4,
 		'description':'Spears, Straight Swords, Round Shields, Leather and Brass armour are allowed. No chest piece and no elemental weapons.',
-		'types':['armour','lhw','rhw']
+		'types':['cosplay','spartan','no-elemental','armour','lhw','rhw']
 	},
 	{
 		'id':'straight-swords',
