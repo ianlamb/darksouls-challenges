@@ -43,25 +43,20 @@
 				</div>
 				
 				<div class="row">
-					<div class="large-6 large-offset-3 columns">
-						<div class="row collapse">
-							<div class="small-6 large-6 columns">
-								<span class="prefix">Challenge Difficulty</span>
-							</div>
-							<div class="small-6 large-6 columns">
+					<div class="large-3 columns">
+						<div class="main-form">
+							<div class="input-group">
+								<label for="modDifficulty">Challenge Difficulty</label>
 								<select id="modDifficulty"></select>
+								<button type="button" id="randomBtn" class="button success expanded" onclick="randomize()">Randomize</button>
 							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="row">
-					<div class="large-6 large-offset-3 columns">
-						<input type="button" value="Randomize" id="randomBtn" class="small button success expand" onclick="randomize()" />
+
+					<div class="large-9 columns end">
+						<div id="output"></div>
 					</div>
 				</div>
-
-				<div id="output"></div>
 			</div>
 		</div>
 	<div>

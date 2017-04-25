@@ -19,8 +19,6 @@ li {
 	list-style-type: none;
 }
 
-input[type="checkbox"] { margin: 5px 5px 5px 0; }
-
 .top-bar {
     position: fixed;
     z-index: 10;
@@ -48,11 +46,21 @@ input[type="checkbox"] { margin: 5px 5px 5px 0; }
 #content {
     position: relative;
     z-index: 0;
-	border: 1px solid #454545;
-	background: #333;
-	border-radius: 2px;
     margin-top: 90px;
 	margin-bottom: 320px;
+}
+
+.main-form {
+	border: 1px solid #666;
+	background: #454545;
+	border-radius: 2px;
+    padding: 20px;
+}
+.main-form .input-group {
+    margin-bottom: 0;
+}
+.main-form .button {
+    margin-bottom: 0;
 }
 
 .page {
@@ -76,7 +84,7 @@ footer {
 	border: 1px solid #666;
 	border-radius: 2px;
 	padding: 10px 20px;
-	margin: 20px 0;
+	margin-bottom: 20px;
 }
 .cr-result ul {
 	margin-top: 10px;
@@ -112,18 +120,6 @@ footer {
 .cr-result li.insane {
 	background: #ff4a14;
 	border-color: #ee3706;
-}
-
-#toggleMods {
-	padding-top: 0.625rem;
-	padding-bottom: 0.625rem;
-}
-
-#randomBtn {
-	font-size: 120%;
-	font-weight: bold;
-	padding-top: 7px;
-	padding-bottom: 7px;
 }
 
 #modifiers {
