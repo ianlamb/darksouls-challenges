@@ -6,7 +6,7 @@ $(function(){
     var modElem;
 
     for(var i = 0; i < modifiers.length; i++) {
-        modElem = '<li><label><input type="checkbox" name="' + modifiers[i].name + '">' + modifiers[i].name + '</label></li>';
+        modElem = '<li><label>' + modifiers[i].name + '</label></li>';
         if(modifiers[i].name.indexOf('Weapon Type:') >= 0) {
             $('#mods3').append(modElem);
         } else if(modifiers[i].name.indexOf('Class:') >= 0 || modifiers[i].name.indexOf('Max Level:') >= 0 || modifiers[i].name.indexOf('Cosplay:') >= 0) {
