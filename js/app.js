@@ -1,4 +1,4 @@
-$(document).foundation()
+'use strict';
 
 var resultCount = 0;
 
@@ -80,9 +80,11 @@ function randomize() {
     for(var i = 0; i < chosenMods.length; i++) {
         mod = chosenMods[i];
 
-        $('#cr' + resultCount + ' ul').append('<li class="' + getDifficultyClass(mod.difficulty) + '" title="' + mod.description + '">' + mod.name + '</li>');
+        $('#cr' + resultCount + ' ul').append('<li class="' + getDifficultyClass(mod.difficulty) + '"><span data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" tabindex="' + i + '" title="' + (mod.description || 'Self explanatory.') + '">' + mod.name + '</span></li>');
     }
     $('#cr' + resultCount).hide().slideDown();
+
+    $(document).foundation();
 
     ga('send', {
         hitType: 'event',
