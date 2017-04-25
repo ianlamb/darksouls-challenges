@@ -34,6 +34,11 @@ li {
     line-height: 0.6em;
 }
 
+.has-tip {
+    border: 0;
+    outline: none;
+}
+
 .bonfire {
     position: fixed;
     left: 50%;
