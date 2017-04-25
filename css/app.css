@@ -132,3 +132,10 @@ footer {
 	border: 1px solid #666;
 	border-radius: 2px;
 }
+
+
+@media (max-width: 768px) {
+    .menu-text {
+        font-size: 1em;
+    }
+}
