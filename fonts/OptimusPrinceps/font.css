@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'OptimusPrinceps';
+	src: url('./OptimusPrinceps.eot');
+	src: local('OptimusPrinceps'), url('./OptimusPrinceps.woff') format('woff'), url('./OptimusPrinceps.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_1045">Text with this font applied</p> */
+.fontsforweb_fontid_1045 {
+	font-family: 'OptimusPrinceps' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
